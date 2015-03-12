@@ -16,8 +16,7 @@ namespace FirstConference
         Graphics gr;
         Pen p;
         List<Shape> shapes = new List<Shape>();
-        bool isSelected = false;
-        int Selected;
+        int Selected = -1;
         public Form1()
         {
             InitializeComponent();
@@ -81,25 +80,25 @@ namespace FirstConference
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
-            while(!isSelected)
-            {
                 int size = shapes.Count;
                 for (int i = 0; i < size; i++)
                 {
-                    isSelected = shapes[i].isSelected(this.Location.X, this.Location.Y);
-                    Selected = i;
+                    if (shapes[i].isSelected(this.Location.X, this.Location.Y))
+                    {
+                        Selected = i;
+                        break;
+                    }
                 }
-            }
         }
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
-            isSelected = false;
+            Selected = -1;
         }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
-            if(isSelected)
+            if (Selected != -1)
             {
                 shapes[Selected].setPositions(this.Location.X, this.Location.Y);
             }
