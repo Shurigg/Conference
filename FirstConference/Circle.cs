@@ -37,5 +37,12 @@ namespace FirstConference
             type.wrInt(r);
             type.wrString(name);
         }
+        public bool isSelected(int dx, int dy)
+        {
+            if ((dx - x) * (dx - x) + (dy - y) * (dy - y) == r * r)
+                return true;
+            else
+                return false;
+        }
     }
 }

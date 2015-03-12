@@ -11,5 +11,6 @@ namespace FirstConference
         void Load(Filer type);
         void Draw(Graphics gr, Pen p);
         void Save(Filer type);
+        bool isSelected(int dx, int dy);
     }
 }

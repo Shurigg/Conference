@@ -39,5 +39,9 @@ namespace FirstConference
             type.wrInt(y2);
             type.wrString(name);
         }
+        public bool isSelected(int dx, int dy)
+        {
+            return false;
+        }
     }
 }

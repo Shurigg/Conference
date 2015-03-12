@@ -39,5 +39,12 @@ namespace FirstConference
             type.wrInt(height);
             type.wrString(name);
         }
+        public bool isSelected(int dx, int dy)
+        {
+            if ((dx == x && y <= dy && dy <= y + height) || (dx == x + width && y <= dy && dy <= y + height) || (dy == y && x < dx && dx < x + width) || (dy == y + height && x < dx && dx < x + width))
+                return true;
+            else
+                return false;
+        }
     }
 }
