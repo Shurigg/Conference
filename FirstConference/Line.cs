@@ -8,7 +8,7 @@ namespace FirstConference
 {
     class Line : Shape
     {
-        int x1, y1, x2, y2;
+        int x1, y1, x2, y2, dx, dy;
         string name;
         public Line()
         {
@@ -39,9 +39,13 @@ namespace FirstConference
             type.wrInt(y2);
             type.wrString(name);
         }
-        public bool isSelected(int dx, int dy)
+        public bool isSelected(int mouseX, int mouseY)
         {
             return false;
+        }
+        public void setPositions(int mouseX, int mouseY)
+        {
+
         }
     }
 }

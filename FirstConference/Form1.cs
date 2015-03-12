@@ -96,5 +96,13 @@ namespace FirstConference
         {
             isSelected = false;
         }
+
+        private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
+        {
+            if(isSelected)
+            {
+                shapes[Selected].setPositions(this.Location.X, this.Location.Y);
+            }
+        }
     }
 }

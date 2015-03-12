@@ -9,7 +9,7 @@ namespace FirstConference
 {
     class Square: Shape
     {
-        int x, y, side;
+        int x, y, side, dx, dy;
         string name;
         public Square()
         {
@@ -37,12 +37,21 @@ namespace FirstConference
             type.wrInt(side);
             type.wrString(name);
         }
-        public bool isSelected(int dx, int dy)
+        public bool isSelected(int mouseX, int mouseY)
         {
-            if ((dx == x && y <= dy && dy <= y + side) || (dx == x + side && y <= dy && dy <= y + side) || (dy == y && x < dx && dx < x + side) || (dy == y + side && x < dx && dx < x + side))
+            if ((mouseX == x && y <= mouseY && mouseY <= y + side) || (mouseX == x + side && y <= mouseY && mouseY <= y + side) || (mouseY == y && x < mouseX && mouseX < x + side) || (mouseY == y + side && x < mouseX && mouseX < x + side))
+            {
+                dx = mouseX - x;
+                dy = mouseY - y;
                 return true;
+            }
             else
                 return false;
+        }
+        public void setPositions(int mouseX, int mouseY)
+        {
+            x = mouseX - dx;
+            y = mouseY - dy;
         }
     }
 }

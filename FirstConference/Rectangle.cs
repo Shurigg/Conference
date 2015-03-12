@@ -8,7 +8,7 @@ namespace FirstConference
 {
     class Rectangle : Shape
     {
-        int x, y, width, height;
+        int x, y, width, height, dx, dy;
         string name;
         public Rectangle()
         {
@@ -39,12 +39,21 @@ namespace FirstConference
             type.wrInt(height);
             type.wrString(name);
         }
-        public bool isSelected(int dx, int dy)
+        public bool isSelected(int mouseX, int mouseY)
         {
-            if ((dx == x && y <= dy && dy <= y + height) || (dx == x + width && y <= dy && dy <= y + height) || (dy == y && x < dx && dx < x + width) || (dy == y + height && x < dx && dx < x + width))
+            if ((mouseX == x && y <= mouseY && mouseY <= y + height) || (mouseX == x + width && y <= mouseY && mouseY <= y + height) || (mouseY == y && x < mouseX && mouseX < x + width) || (mouseY == y + height && x < mouseX && mouseX < x + width))
+            {
+                dx = mouseX - x;
+                dy = mouseY - y;
                 return true;
+            }
             else
                 return false;
+        }
+        public void setPositions(int mouseX, int mouseY)
+        {
+            x = mouseX - dx;
+            y = mouseY - dy;
         }
     }
 }

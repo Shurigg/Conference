@@ -8,7 +8,7 @@ namespace FirstConference
 {
     class Circle : Shape
     {
-        int x, y;
+        int x, y, dx, dy;
         int r;
         string name;
         public Circle()
@@ -37,12 +37,21 @@ namespace FirstConference
             type.wrInt(r);
             type.wrString(name);
         }
-        public bool isSelected(int dx, int dy)
+        public bool isSelected(int mouseX, int mouseY)
         {
-            if ((dx - x) * (dx - x) + (dy - y) * (dy - y) == r * r)
+            if ((mouseX - x) * (mouseX - x) + (mouseY - y) * (mouseY - y) == r * r)
+            {
+                dx = mouseX - x;
+                dy = mouseY - y;
                 return true;
+            }
             else
                 return false;
+        }
+        public void setPositions(int mouseX, int mouseY)
+        {
+            x = mouseX - dx;
+            y = mouseY - dy;
         }
     }
 }
