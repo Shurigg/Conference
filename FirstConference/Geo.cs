@@ -33,6 +33,8 @@ namespace FirstConference
                     return new Circle();
                 case 3:
                     return new Rectangle();
+                case 4:
+                    return new Square();
                 default: return null;
             }
         }

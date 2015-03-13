@@ -8,32 +8,35 @@ namespace FirstConference
 {
     class Rectangle : Shape
     {
-        int x, y, side;
+        int x, y, width, height;
         string name;
         public Rectangle()
         {
             x = 350;
             y = 120;
-            side = 200;
-            name = "Square";
+            width = 300;
+            height = 150;
+            name = "Rectangle";
         }
         public void Load(Filer type)
         {
             this.x = type.rdInt();
             this.y = type.rdInt();
-            this.side = type.rdInt();
+            this.width = type.rdInt();
+            this.height = type.rdInt();
             this.name = type.rdString();
         }
         public void Draw(Graphics gr, Pen p)
         {
-            gr.DrawRectangle(p, x, y, side, side);
+            gr.DrawRectangle(p, x, y, width, height);
         }
         public void Save(Filer type)
         {
             type.wrInt(3);
             type.wrInt(x);
             type.wrInt(y);
-            type.wrInt(side);
+            type.wrInt(width);
+            type.wrInt(height);
             type.wrString(name);
         }
     }

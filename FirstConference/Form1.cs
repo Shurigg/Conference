@@ -71,5 +71,10 @@ namespace FirstConference
             }
             f.closeWR();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            shapes.Add(new Square());
+        }
     }
 }
