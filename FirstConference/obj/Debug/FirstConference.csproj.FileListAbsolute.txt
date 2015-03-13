@@ -1,0 +1,9 @@
+C:\Users\Александр\Documents\Visual Studio 2013\Projects\FirstConference\FirstConference\bin\Debug\FirstConference.exe.config
+C:\Users\Александр\Documents\Visual Studio 2013\Projects\FirstConference\FirstConference\bin\Debug\FirstConference.exe
+C:\Users\Александр\Documents\Visual Studio 2013\Projects\FirstConference\FirstConference\bin\Debug\FirstConference.pdb
+C:\Users\Александр\Documents\Visual Studio 2013\Projects\FirstConference\FirstConference\obj\Debug\FirstConference.csprojResolveAssemblyReference.cache
+C:\Users\Александр\Documents\Visual Studio 2013\Projects\FirstConference\FirstConference\obj\Debug\FirstConference.Form1.resources
+C:\Users\Александр\Documents\Visual Studio 2013\Projects\FirstConference\FirstConference\obj\Debug\FirstConference.Properties.Resources.resources
+C:\Users\Александр\Documents\Visual Studio 2013\Projects\FirstConference\FirstConference\obj\Debug\FirstConference.csproj.GenerateResource.Cache
+C:\Users\Александр\Documents\Visual Studio 2013\Projects\FirstConference\FirstConference\obj\Debug\FirstConference.exe
+C:\Users\Александр\Documents\Visual Studio 2013\Projects\FirstConference\FirstConference\obj\Debug\FirstConference.pdb
