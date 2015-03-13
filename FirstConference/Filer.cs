@@ -15,5 +15,6 @@ namespace FirstConference
         abstract public void wrDouble(double Double);
         abstract public void wrString(string String);
         abstract public bool eof();
+        abstract public void closeWR();
     }
 }

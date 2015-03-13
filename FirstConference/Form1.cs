@@ -69,6 +69,7 @@ namespace FirstConference
             {
                 shapes[i].Save(f);
             }
+            f.closeWR();
         }
     }
 }

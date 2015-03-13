@@ -32,6 +32,7 @@ namespace FirstConference
         }
         public void Save(Filer type)
         {
+            type.wrInt(1);
             type.wrInt(x1);
             type.wrInt(y1);
             type.wrInt(x2);

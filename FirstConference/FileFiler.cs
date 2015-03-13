@@ -48,5 +48,9 @@ namespace FirstConference
         {
             wStream.WriteLine(String);
         }
+        public override void closeWR()
+        {
+            wStream.Close();
+        }
     }
 }
