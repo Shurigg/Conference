@@ -80,31 +80,34 @@ namespace FirstConference
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
-            if (Selected == -1)
-            {
                 int size = shapes.Count;
-                for (int i = 0; i < size; i++)
+                for (int i = size - 1; i >=0; i--)
                 {
-                    if (shapes[i].isSelected(this.Location.X, this.Location.Y))
+                    if (shapes[i].isSelected(e.X, e.Y))
                     {
                         Selected = i;
                         break;
                     }
                 }
-            }
         }
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
             Selected = -1;
+            Invalidate();
         }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
             if (Selected != -1)
             {
-                shapes[Selected].setPositions(this.Location.X, this.Location.Y);
+                shapes[Selected].setPositions(e.X, e.Y);
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            shapes.Clear();
         }
     }
 }

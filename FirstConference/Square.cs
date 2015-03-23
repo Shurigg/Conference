@@ -39,7 +39,7 @@ namespace FirstConference
         }
         public bool isSelected(int mouseX, int mouseY)
         {
-            if ((mouseX == x && y <= mouseY && mouseY <= y + side) || (mouseX == x + side && y <= mouseY && mouseY <= y + side) || (mouseY == y && x < mouseX && mouseX < x + side) || (mouseY == y + side && x < mouseX && mouseX < x + side))
+            if (mouseX >= x && mouseX <= x + side && mouseY >= y && mouseY <= y + side)
             {
                 dx = mouseX - x;
                 dy = mouseY - y;

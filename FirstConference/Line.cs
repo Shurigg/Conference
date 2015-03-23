@@ -41,16 +41,34 @@ namespace FirstConference
         }
         public bool isSelected(int mouseX, int mouseY)
         {
-            if (((mouseX <= x1 && mouseX >= x2) || (mouseX >= x1 && mouseX <= x2)) && ((mouseY <= y1 && mouseY >= y2) || (mouseY >= y1 && mouseY <= y2)) && ((mouseX - x1) / (x2 - x1) == (mouseY - y1) / (y2 - y1)))
-            {
-                dx1 = mouseX - x1;
-                dy1 = mouseY - y1;
-                dx2 = mouseX - x2;
-                dy2 = mouseY - y2;
-                return true;
-            }
-            else
-                return false;
+            if (x2 - x1 == 0)
+                if (((mouseY >= y1 && mouseY <= y2) || (mouseY >= y2 && mouseY <= y1)) && (mouseX > x1 - 3) && (mouseX < x1 + 3))
+                {
+                    dx1 = mouseX - x1;
+                    dy1 = mouseY - y1;
+                    dx2 = mouseX - x2;
+                    dy2 = mouseY - y2;
+                    return true;
+                }
+            if (y2 - y1 == 0)
+                if (((mouseX >= x1 && mouseX <= x2) || (mouseX >= x2 && mouseX <= x1)) && (mouseY > y1 - 3) && (mouseY < y1 + 3))
+                {
+                    dx1 = mouseX - x1;
+                    dy1 = mouseY - y1;
+                    dx2 = mouseX - x2;
+                    dy2 = mouseY - y2;
+                    return true;
+                }
+            if (x1 - x2 != 0 && y1 - y2 != 0)
+                if (false)
+                {
+                    dx1 = mouseX - x1;
+                    dy1 = mouseY - y1;
+                    dx2 = mouseX - x2;
+                    dy2 = mouseY - y2;
+                    return true;
+                }
+            return false;
         }
         public void setPositions(int mouseX, int mouseY)
         {
