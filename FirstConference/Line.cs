@@ -8,7 +8,7 @@ namespace FirstConference
 {
     class Line : Shape
     {
-        int x1, y1, x2, y2, dx, dy;
+        int x1, y1, x2, y2, dx1, dy1, dx2, dy2;
         string name;
         public Line()
         {
@@ -41,11 +41,23 @@ namespace FirstConference
         }
         public bool isSelected(int mouseX, int mouseY)
         {
-            return false;
+            if (((mouseX <= x1 && mouseX >= x2) || (mouseX >= x1 && mouseX <= x2)) && ((mouseY <= y1 && mouseY >= y2) || (mouseY >= y1 && mouseY <= y2)) && ((mouseX - x1) / (x2 - x1) == (mouseY - y1) / (y2 - y1)))
+            {
+                dx1 = mouseX - x1;
+                dy1 = mouseY - y1;
+                dx2 = mouseX - x2;
+                dy2 = mouseY - y2;
+                return true;
+            }
+            else
+                return false;
         }
         public void setPositions(int mouseX, int mouseY)
         {
-
+            x1 = mouseX - dx1;
+            y1 = mouseY - dy1;
+            x2 = mouseX - dx2;
+            y2 = mouseY - dy2;
         }
     }
 }

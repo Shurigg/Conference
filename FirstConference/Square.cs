@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FirstConference
 {
-    class Square: Shape
+    class Square : Shape
     {
         int x, y, side, dx, dy;
         string name;
@@ -50,8 +50,8 @@ namespace FirstConference
         }
         public void setPositions(int mouseX, int mouseY)
         {
-            x = mouseX - dx;
-            y = mouseY - dy;
+            this.x = mouseX - dx;
+            this.y = mouseY - dy;
         }
     }
 }
