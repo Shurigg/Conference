@@ -60,7 +60,7 @@ namespace FirstConference
                     return true;
                 }
             if (x1 - x2 != 0 && y1 - y2 != 0)
-                if (false)
+                if ((x2 - x1) * (mouseY - (y1 + 4)) < ((y2 + 4) - (y1 + 4)) * (mouseX - x1) && (x2 - x1) * (mouseY - (y1 - 4)) > ((y2 - 4) - (y1 - 4)) * (mouseX - x1))
                 {
                     dx1 = mouseX - x1;
                     dy1 = mouseY - y1;
