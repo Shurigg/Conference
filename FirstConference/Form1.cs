@@ -80,6 +80,8 @@ namespace FirstConference
 
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
+            if (Selected == -1)
+            {
                 int size = shapes.Count;
                 for (int i = 0; i < size; i++)
                 {
@@ -89,6 +91,7 @@ namespace FirstConference
                         break;
                     }
                 }
+            }
         }
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
